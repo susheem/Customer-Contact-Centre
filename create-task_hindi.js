@@ -1,0 +1,1 @@
+PATH -- /create-task_hiexports.handler = function(context, event, callback) {    const client=context.getTwilioClient();    client.taskrouter.v1    .workspaces(context.WORKSPACE_SID)    .tasks    .create({        workflowSid: context.WORKFLOW_SID,        attributes: '{"selected_language":"hi"}'}).then (task => {    callback(null, 'Hindi Task Created');});};
